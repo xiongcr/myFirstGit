@@ -34,7 +34,7 @@ public class BufferDemo {
 
         byteBuffer.put((byte)5);
         System.out.println(String.format("最终情况：初始化:capacity容量:%s，location位置:%s，limit限制:%s",byteBuffer.capacity(),byteBuffer.position(),byteBuffer.limit()));
-
+//        hahahah
 
     }
 
