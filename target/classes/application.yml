@@ -1,0 +1,51 @@
+server:
+  port: 8013
+  servlet:
+    context-path: /myboot
+
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource   #配置当前要使用的数据源的操作类型那个
+    driver-class-name: org.gjt.mm.mysql.Driver       #配置MySQL的驱动程序类
+    url: jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: thinker
+    filters: stat,wall,log4j     #druid监控配置
+    dbcp2:
+      min-idle: 5         #数据库连接池的最小维持连接数
+      initial-size: 5     #初始化提供的连接数
+      max-total: 5          #最大的连接数
+      max-wait-millis: 200        #等待连接获取的最大超时时间
+
+#mybatis相关配置
+mybatis:
+  #当mybatis的xml文件和mapper接口不在相同包下时
+  #需要用mapperLocations属性指定xml文件的路径。
+  #*是个通配符，代表所有的文件，**代表所有目录下
+  mapper-locations: classpath:mapper/*.xml
+  #指定bean所在包
+  #在mapper.xml中可以使用别名而不使用类的全路径名
+  type-aliases-package: com.myspringtest.test.business.model
+#  configuration:
+#    log-impl: com.myspringtest.test.business.mapper
+
+
+#通用mapper配置
+mapper:
+  #mappers 多个接口时逗号隔开
+  mappers: com.myspringtest.test.util.MyMapper
+  not-empty: false
+  identity: MYSQL
+
+#pagehelper分页插件
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  params: count=countSql
+  support-methods-arguments: true
+
+logging:
+  level:
+    com.myspringtest.test.business: debug
+    org.springframework.jdbc.core.JdbcTemplate: debug
