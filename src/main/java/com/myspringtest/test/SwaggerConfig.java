@@ -15,6 +15,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author xcr
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
@@ -36,7 +39,6 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("熊崇瑞  RESTful API")
                 .description("测试玩玩")
-//                .termsOfServiceUrl("http://blog.didispace.com/")
                 .version("2.0")
                 .build();
     }

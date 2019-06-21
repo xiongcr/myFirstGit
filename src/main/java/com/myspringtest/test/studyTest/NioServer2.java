@@ -10,7 +10,10 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
 
-public class NIOServer2 {
+/**
+ * @author xcr
+ */
+public class NioServer2 {
 
     public static void main(String[] args) throws Exception{
         //创建网络服务断

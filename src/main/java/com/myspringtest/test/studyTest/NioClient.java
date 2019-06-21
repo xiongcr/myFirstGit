@@ -5,7 +5,10 @@ import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 import java.util.Scanner;
 
-public class NIOClient {
+/**
+ * @author xcr
+ */
+public class NioClient {
     public static void main(String[] args) throws Exception{
         SocketChannel socketChannel= SocketChannel.open();
         socketChannel.configureBlocking(false);
@@ -26,7 +29,7 @@ public class NIOClient {
         System.out.println("收到服务端响应：");
         ByteBuffer requestBuffer=ByteBuffer.allocate(1024);
 
-        while (socketChannel.isOpen()&&socketChannel.read(requestBuffer)!=-1){
+        while (socketChannel.isOpen() && (socketChannel.read(requestBuffer) != -1)){
             //长链接情况下，需要判断数据有没有读取结束（此处认为超过0字节就认为是成功饿了）
             if (requestBuffer.position()>0){break;}
         }

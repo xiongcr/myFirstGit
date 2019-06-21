@@ -4,7 +4,10 @@ import java.nio.ByteBuffer;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 
-public class NIOServer {
+/**
+ * @author xcr
+ */
+public class NioServer {
     public static void main(String[] args) throws Exception{
     //创建网络服务断
         ServerSocketChannel serverSocketChannel=ServerSocketChannel.open();

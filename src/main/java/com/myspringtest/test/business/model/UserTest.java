@@ -3,6 +3,9 @@ package com.myspringtest.test.business.model;
 
 import javax.persistence.*;
 
+/**
+ * @author xcr
+ */
 @Table(name = "`usertest`")
 public class UserTest {
     @Id

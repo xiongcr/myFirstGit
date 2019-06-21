@@ -6,8 +6,11 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 
+/**
+ * @author xcr
+ */
 @Configuration
-public class ImpotantConfig extends WebMvcConfigurerAdapter {
+public class ImportantConfig extends WebMvcConfigurerAdapter {
 
 
     /**
